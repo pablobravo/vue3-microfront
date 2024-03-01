@@ -1,0 +1,5 @@
+dist
+node_modules
+public
+package.json
+components.d.ts

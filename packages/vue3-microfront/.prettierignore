@@ -1,0 +1,6 @@
+dist/
+node_modules/
+yarn.lock
+README.md
+changelog-template.hbs
+components.d.ts

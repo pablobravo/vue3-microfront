@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "order/properties-alphabetical-order": true,
+    "color-no-invalid-hex": true,
+    "comment-empty-line-before": [
+      "always",
+      {
+        "ignore": ["stylelint-commands", "after-comment"]
+      }
+    ],
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
+      }
+    ],
+    "unit-allowed-list": [
+      "em",
+      "rem",
+      "%",
+      "s",
+      "px",
+      "vh",
+      "vw",
+      "deg",
+      "fr",
+      "ms"
+    ],
+    "value-no-vendor-prefix": true,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "deep"
+        ]
+      }
+    ]
+  }
+}

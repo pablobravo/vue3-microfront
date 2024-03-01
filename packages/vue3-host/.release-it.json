@@ -1,0 +1,9 @@
+{
+  "git": {
+    "changelog": "auto-changelog --stdout --commit-limit false --unreleased --template ./changelog-template.hbs",
+    "commitMessage": "release(core): v${version}"
+  },
+  "hooks": {
+    "after:bump": "npm run changelog"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^8.1.2"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "build": "lerna run build",
+    "dev": "lerna run --parallel dev",
+    "serve": "lerna run --parallel serve",
+    "publish": "lerna publish"
+  }
+}

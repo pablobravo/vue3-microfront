@@ -1,0 +1,1 @@
+import{importShared as e}from"./__federation_fn_import-5o10tGgU.js";import{_ as n}from"./CardComponent.scss_vue_type_style_index_0_src_true_lang-Dq9bTyJD.js";import{_ as r}from"./index-CykWH9Tp.js";const t={},{resolveComponent:l,openBlock:c,createBlock:_}=await e("vue");function a(m,s){const o=n;return c(),_(o)}const d=r(t,[["render",a]]);export{d as default};

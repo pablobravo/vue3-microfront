@@ -1,0 +1,83 @@
+.header {
+  border-bottom: 1px solid #ddd;
+
+  &__wrapper {
+    @include breakpoint(tablet) {
+      background-color: white;
+      padding-bottom: 24px;
+      padding-top: 24px;
+    }
+
+    @include breakpoint(desktop) {
+      padding-bottom: 40px;
+      padding-top: 40px;
+    }
+
+    @media screen and (max-width: 720px) {
+      margin: 0;
+      max-width: 100%;
+    }
+
+    @include breakpoint(tablet) {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: space-between;
+    }
+
+    &--private {
+      justify-content: center;
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    width: 150px;
+  }
+
+  &__btn-wrapper {
+    align-items: center;
+    display: flex;
+  }
+
+  &__text {
+    color: grey;
+    margin-right: 16px;
+  }
+
+  &__title {
+    background-color: white;
+    color: orange;
+    font: 400 40px / 68px, Helvetica,
+      sans-serif;
+    margin: auto 0 auto 20px;
+    padding: 8px;
+
+    @include breakpoint(tablet) {
+      background-color: rgba(white, 0);
+      margin-bottom: 0;
+      padding: 0;
+      text-align: left;
+    }
+
+    @include breakpoint(desktop) {
+      font: 400 60px / 68px, Helvetica,
+        sans-serif;
+      margin: 0 auto;
+      padding-top: 8px;
+    }
+  }
+
+  &__back {
+    color: grey;
+    cursor: pointer;
+
+    .icon {
+      margin-right: 16px;
+    }
+
+    &--no-pointer {
+      cursor: default;
+    }
+  }
+}

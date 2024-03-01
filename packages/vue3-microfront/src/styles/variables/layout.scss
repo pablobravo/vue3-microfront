@@ -1,0 +1,15 @@
+$bp-mobile: 599px !default;
+// Medium screen / tablet
+$bp-tablet: 720px !default;
+// Large screen / desktop
+$bp-desktop: 1024px !default;
+// Extra large screen / wide desktop
+$bp-desktop-large: 1440px !default;
+
+// Breakpoints in the form (name: length)
+$breakpoints: (
+  mobile: $bp-mobile,
+  tablet: $bp-tablet,
+  desktop: $bp-desktop,
+  desktop-large: $bp-desktop-large
+) !default;

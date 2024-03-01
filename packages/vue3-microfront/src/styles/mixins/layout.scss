@@ -1,0 +1,23 @@
+@use "sass:map";
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == '' {
+    @content;
+  } @else {
+    // Retrieves the value from the key
+    $value: map.get($breakpoints, $breakpoint);
+
+    // If the key exists in the map
+    @if $value {
+      // Prints a media query based on the value
+      @media (min-width: $value) {
+        @content;
+      }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map.";
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "name": "vue3-host",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "build:clean": "rimraf dist/*",
+    "build:serve": "vite build",
+    "changelog": "auto-changelog && git add CHANGELOG.md",
+    "check": "prettier --check .",
+    "commit": "git-cz",
+    "coverage": "vitest run --coverage",
+    "dev": "vite --port=4000 --host",
+    "lint": "eslint --ext .ts,.vue --ignore-path .gitignore src",
+    "lint:all": "npm run lint && npm run stylelint",
+    "lint:all:fix": "npm run lint:fix && npm run stylelint:fix",
+    "lint:fix": "eslint --ext .ts,.vue --ignore-path .gitignore src --fix",
+    "locales": "bash locales/locales-update.sh",
+    "preview": "vite preview",
+    "release": "release-it",
+    "serve": "vite --port=4000 --host",
+    "stylelint": "npx stylelint '**/*.scss'",
+    "stylelint:fix": "npx stylelint '**/*.scss' --fix",
+    "test": "vitest",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.7.0",
+    "axios": "^1.6.2",
+    "happy-dom": "^12.10.3",
+    "pinia": "^2.1.7",
+    "vue": "^3.3.13",
+    "vue-i18n": "^9.8.0",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^1.6.0",
+    "@originjs/vite-plugin-federation": "^1.3.5",
+    "@types/node": "^20.10.5",
+    "@vitejs/plugin-vue": "^5.0.0-beta.1",
+    "@vue/test-utils": "^2.4.3",
+    "@vuelidate/core": "^2.0.3",
+    "@vuelidate/validators": "^2.0.4",
+    "c8": "^8.0.1",
+    "cross-env": "^7.0.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.32",
+    "rimraf": "^5.0.5",
+    "sass": "~1.69.5",
+    "stylelint-config-recess-order": "^4.4.0",
+    "stylelint-selector-bem-pattern": "^3.0.1",
+    "typescript": "5.1.6",
+    "unplugin-auto-import": "^0.17.2",
+    "unplugin-vue-components": "^0.26.0",
+    "vite": "^5.0.10",
+    "vite-svg-loader": "^5.1.0",
+    "vitest": "^1.1.0",
+    "vue-tsc": "^1.8.25"
+  },
+  "optionalDependencies": {
+    "@vue/eslint-config-typescript": "^11.0.3",
+    "auto-changelog": "^2.4.0",
+    "commitizen": "^4.3.0",
+    "cy-verify-downloads": "^0.2.3",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.19.2",
+    "lint-staged": "^15.1.0",
+    "prettier": "3.1.1",
+    "release-it": "^17.0.1",
+    "stylelint": "^16.0.2",
+    "stylelint-config-recommended-scss": "^14.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^6.0.0"
+  },
+  "auto-changelog": {
+    "commitLimit": false,
+    "template": "changelog-template.hbs",
+    "commitUrl": "...",
+    "compareUrl": "...",
+    "replaceText": {
+      "🐛|🧩|✅|🧑‍💻|♻️|⚡️|‼️|📝": "",
+      "Merged PR \\d*:": "",
+      "(\\d{6})": "[$1](.../$1)",
+      " : ": "",
+      "^\\s+": ""
+    }
+  },
+  "lint-staged": {
+    "*.{vue,ts}": [
+      "npm run lint"
+    ],
+    "*.scss": [
+      "npm run stylelint"
+    ]
+  }
+}
